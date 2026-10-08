@@ -1,8 +1,6 @@
 import { test, expect } from '../src/fixtures/test.fixture';
 
 test.describe('Anomaly Detection', () => {
-  test.setTimeout(120_000);
-
   test.describe('Algorithm details', () => {
     test('shows the Z-Score detection algorithm', async ({ anomalyPage }) => {
       await anomalyPage.openAlgorithmDetails();

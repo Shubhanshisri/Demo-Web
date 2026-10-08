@@ -42,14 +42,14 @@ export class AnomalyDetectionPage {
     });
     const alertsHeading = this.app.getByRole('heading', { name: 'Anomaly Detection & Alerts' });
 
-    await expect(anomalyDetectionLink).toBeVisible({ timeout: 60_000 });
+    await expect(anomalyDetectionLink).toBeVisible({ timeout: 30_000 });
     await expect(async () => {
       if (!(await alertsHeading.isVisible())) {
         await anomalyDetectionLink.click();
       }
       await expect(this.page).toHaveURL(/\/Anomaly_Detection/, { timeout: 10_000 });
       await expect(alertsHeading).toBeVisible({ timeout: 10_000 });
-    }).toPass({ timeout: 60_000 });
+    }).toPass({ timeout: 30_000 });
   }
 
   selectedServices() {
